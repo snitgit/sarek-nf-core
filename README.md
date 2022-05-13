@@ -34,17 +34,22 @@ It's listed on [Elixir - Tools and Data Services Registry](https://bio.tools/nf-
 
 2. Login to hpc.mahidol.ac.th 
 3. Create Remote Desktop and connect to default assigned by onDemand. However, only tensorcore supports Pyhton3 Virtual Environment. So reserver slurm resource for Tensorcode node and ssh to it.
+```
     $ salloc -w tensorcore
     $ ssh tensorcore
+```    
 5. We need one Python module to install : "markdown", based on Python3 Virtual environment. There is only one computer node for Python3 VENV installed so create virtual environment 
+```
     $ python3 -m venv myenv
     $ source myenv/bin/active
     $ pip install markdown
-
+```
 6. Assume working directory is ~/nextflow/nf-core/sarek, create config folder
+```
     $ mkdir ~/nextflow/nf-core/sarek/conf
     $ wget https://raw.githubusercontent.com/nf-core/sarek/master/nextflow.config
     $ mv nextflow.config base.conf
+ ```
 7. Start running your own analysis!
 
     ```
