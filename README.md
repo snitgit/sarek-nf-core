@@ -53,7 +53,7 @@ It's listed on [Elixir - Tools and Data Services Registry](https://bio.tools/nf-
 7. Start running your own analysis!
 
     ```
-    nextflow run nf-core/sarek -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --input '*.tsv' --genome GRCh38
+    nextflow run nf-core/sarek -profile singularity --input '*.tsv' --genome GRCh38
     ```
 
 See [usage docs](https://nf-co.re/sarek/usage) for all of the available options when running the pipeline.
