@@ -49,6 +49,7 @@ It's listed on [Elixir - Tools and Data Services Registry](https://bio.tools/nf-
     $ mkdir ~/nextflow/nf-core/sarek/conf
     $ wget https://raw.githubusercontent.com/nf-core/sarek/master/nextflow.config
     $ mv nextflow.config base.conf
+    $ cd ~/nextflow/nf-core/sarek/
  ```
 7. Start running your own analysis!
 
