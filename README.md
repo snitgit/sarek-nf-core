@@ -22,6 +22,9 @@ Sarek can also handle tumour / normal pairs and could include additional relapse
 
 The pipeline is built using [`Nextflow`](https://www.nextflow.io), a workflow tool to run tasks across multiple compute infrastructures in a very portable manner. It comes with `Docker` containers making installation trivial and results highly reproducible.
 
+Most of the from master source: https://nf-co.re/sarek
+This is the note for testing how nextflow work on a compute node, tensorcore, only one node supported Python3 VENV for now.
+
 <p align="center">
     <img title="Sarek Workflow" src="docs/images/sarek_workflow.png" width=40%>
 </p>
