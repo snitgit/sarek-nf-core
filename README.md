@@ -32,21 +32,22 @@ It's listed on [Elixir - Tools and Data Services Registry](https://bio.tools/nf-
 
 1. Install [`Nextflow`](https://nf-co.re/usage/installation) (`>=20.04.0`)
 
-2. Install any of [`Docker`](https://docs.docker.com/engine/installation/), [`Singularity`](https://www.sylabs.io/guides/3.0/user-guide/), [`Podman`](https://podman.io/), [`Shifter`](https://nersc.gitlab.io/development/shifter/how-to-use/) or [`Charliecloud`](https://hpc.github.io/charliecloud/) for full pipeline reproducibility _(please only use [`Conda`](https://conda.io/miniconda.html) as a last resort; see [docs](https://nf-co.re/usage/configuration#basic-configuration-profiles))_
+2. Login to hpc.mahidol.ac.th 
+3. Create Remote Desktop and connect to default assigned by onDemand. However, only tensorcore supports Pyhton3 Virtual Environment. So reserver slurm resource for Tensorcode node and ssh to it.
+    $ salloc -w tensorcore
+    $ ssh tensorcore
+5. We need one Python module to install : "markdown", based on Python3 Virtual environment. There is only one computer node for Python3 VENV installed so create virtual environment 
+    $ python3 -m venv myenv
+    $ source myenv/bin/active
+    $ pip install markdown
 
-3. Download the pipeline and test it on a minimal dataset with a single command:
+6. Assume working directory is ~/nextflow/nf-core/sarek, create config folder
+    $ mkdir ~/nextflow/nf-core/sarek/conf
+    $ wget https://raw.githubusercontent.com/nf-core/sarek/master/nextflow.config
+    $ mv nextflow.config base.conf
+7. Start running your own analysis!
 
-    ```bash
-    nextflow run nf-core/sarek -profile test,<docker/singularity/podman/shifter/charliecloud/conda/institute>
     ```
-
-    > Please check [nf-core/configs](https://github.com/nf-core/configs#documentation) to see if a custom config file to run nf-core pipelines already exists for your Institute.
-    > If so, you can simply use `-profile <institute>` in your command.
-    > This will enable either `Docker` or `Singularity` and set the appropriate execution settings for your local compute environment.
-
-4. Start running your own analysis!
-
-    ```bash
     nextflow run nf-core/sarek -profile <docker/singularity/podman/shifter/charliecloud/conda/institute> --input '*.tsv' --genome GRCh38
     ```
 
